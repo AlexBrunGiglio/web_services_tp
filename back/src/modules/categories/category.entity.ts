@@ -29,14 +29,14 @@ export class Category {
         this.id = dto.id;
         this.name = dto.name;
 
-        if (dto.movies) {
-            this.movies = [];
-            for (const movie of dto.movies) {
-                const movieToCreate = new Movie();
-                movieToCreate.fromDto(movie);
-                this.movies.push(movieToCreate);
-            }
-        }
+        // if (dto.movies) {
+        //     this.movies = [];
+        //     for (const movie of dto.movies) {
+        //         const movieToCreate = new Movie();
+        //         movieToCreate.fromDto(movie);
+        //         this.movies.push(movieToCreate);
+        //     }
+        // }
 
         if (!this.id)
             this.id = undefined;
