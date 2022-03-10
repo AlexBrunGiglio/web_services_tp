@@ -91,8 +91,13 @@ export abstract class ApplicationBaseModelService<X extends { id: string | numbe
             }
             if (entity) {
                 response[this.modelOptions.getOneResponseField] = entity.toDto(...toDtoParameters);
+                response.success = true;
+                response.statusCode = 200;
             }
-            response.success = true;
+            else {
+                response.handleError('Entité non trouvée');
+                response.statusCode = 404;
+            }
         }
         catch (err) {
             response.handleError(err);

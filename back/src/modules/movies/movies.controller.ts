@@ -49,8 +49,8 @@ export class MoviesController extends BaseController {
     @Post()
     @ApiBearerAuth()
     @ApiOperation({ summary: 'Create or update movie', operationId: 'createOrUpdateMovie' })
-    @ApiResponse({ status: 200, description: 'Create or update movie', type: GetMovieResponse })
-    @HttpCode(200)
+    @ApiResponse({ status: 201, description: 'Create or update movie', type: GetMovieResponse })
+    @HttpCode(201)
     async createOrUpdate(@Body() movieDto: MovieDto): Promise<GetMovieResponse> {
         if (!movieDto)
             throw new AppErrorWithMessage('Invalid Request');
