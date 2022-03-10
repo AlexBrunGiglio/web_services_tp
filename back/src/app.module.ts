@@ -6,6 +6,7 @@ import { DatabaseService } from './database.service';
 import { Environment } from './environment/environment';
 import { AppType } from './modules/app-values/app-type.entity';
 import { AppValue } from './modules/app-values/app-value.entity';
+import { CategoriesModule } from './modules/categories/categories.module';
 import { MoviesModule } from './modules/movies/movies.module';
 import { SharedModule } from './shared/shared.module';
 
@@ -28,7 +29,8 @@ import { SharedModule } from './shared/shared.module';
       AppType,
     ]),
     SharedModule,
-    MoviesModule
+    MoviesModule,
+    CategoriesModule,
   ],
   controllers: [
     AppController,
