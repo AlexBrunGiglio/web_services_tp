@@ -18,8 +18,7 @@ export class MovieDto {
     releaseDate?: Date;
     @ApiPropertyOptional()
     note?: number;
-
-    @ApiProperty()
+    @ApiPropertyOptional()
     categoryId?: string;
     @ApiPropertyOptional({ type: () => CategoryDto })
     category?: CategoryDto;

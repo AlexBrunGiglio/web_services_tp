@@ -19,9 +19,8 @@ export class Movie {
     @Column('int', { name: 'note', nullable: true })
     note?: number;
 
-    @Column('varchar', { name: 'categoryId', length: 36 })
-    categoryId: string;
-
+    @Column('varchar', { name: 'categoryId', length: 36, nullable: true })
+    categoryId?: string;
     @ManyToOne(() => Category, category => category.movies)
     @JoinColumn({ name: 'categoryId' })
     category?: Category;
