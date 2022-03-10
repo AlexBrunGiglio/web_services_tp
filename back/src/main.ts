@@ -8,8 +8,8 @@ async function bootstrap() {
   app.setGlobalPrefix('api');
 
   const config = new DocumentBuilder()
-    .setTitle('API template')
-    .setDescription('API template description')
+    .setTitle('API Web Service')
+    .setDescription('Documentation de l\'API du TP de web services.')
     .setVersion('1.0')
     .addBearerAuth()
     .build();
