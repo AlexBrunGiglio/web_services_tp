@@ -1,0 +1,16 @@
+<div class="admin-menu">
+    <div class="routes-menu">
+        <a [routerLink]="['/' + RoutesList.AdminHome]" routerLinkActive="router-link-active">
+            <fa-icon [icon]="house"></fa-icon>
+            Dashboard
+        </a>
+        <a [routerLink]="['/' + RoutesList.AdminUsers]" routerLinkActive="router-link-active">
+            <fa-icon [icon]="users"></fa-icon>
+            Utilisateurs
+        </a>
+        <a>
+            <fa-icon [icon]="logs"></fa-icon>
+            Logs
+        </a>
+    </div>
+</div>

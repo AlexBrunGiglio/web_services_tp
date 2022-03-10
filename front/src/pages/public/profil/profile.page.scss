@@ -1,0 +1,114 @@
+app-profile {
+    .profil-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: linear-gradient(71.63deg, #F2F2F2 -9.32%, #E0E3FF 103.77%);
+        height: 94vh;
+        @media (max-width: 1250px) { 
+            height: 93vh;
+        }
+        .header {
+            margin-top: 50px;
+            display: flex;
+            align-items: center;
+            @media (max-width: 1250px) { 
+                flex-direction: row;
+                flex-wrap: wrap;
+                margin-top: unset;
+                margin: 10px 20px 10px 20px;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+        .content-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            border-radius: 10px;
+            height: 60vh;
+            @media (max-width: 1250px) { 
+                width: 90vw;
+                height: 70vh;
+            }
+            width: 70vw;
+            background-color: #ffffff;
+            tui-tabs{
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                @media (max-width: 1250px) { 
+                    flex-direction: unset;
+                    justify-content: unset;
+                }
+            }
+            .tabs {
+                width: 100%;
+                @media (max-width: 1250px) { 
+                    width: 85%;
+                }
+            }
+            .user-form {
+                display: flex;
+                flex-direction: column;
+                width: 80%;
+                @media (max-width: 1250px) { 
+                    gap: 10px;
+                }
+                gap: 20px;
+                .inline-input {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    align-items: center;
+                    @media (max-width: 1250px) { 
+                        gap: 10px;
+                    }
+                    gap: 20px;
+                    width: 100%;
+                    .row-input {
+                        width: 40%;
+                        @media (max-width: 1250px) { 
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+            .card-list {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 20px;
+                width: 80%;
+                justify-content: center;
+                align-items: center;
+                margin-top: 20px;
+                @media (max-width: 1250px) { 
+                    margin-top: 10px;
+                }
+                .profile-image-card {
+                    cursor: pointer;
+                    @media (max-width: 1250px) { 
+                        height: 100px;
+                        width: 100px;
+                        background-size: 75px 75px;
+                    }
+                    height: 20vh;
+                    width: 20vh;
+                    border: 3px solid transparent;
+                    border-radius: 20px;
+                    background-position: center;
+                    background-size: 150px 150px;
+                    background-repeat: no-repeat;
+                    background-color: #526ed3;
+                }
+                .profile-image-card.picture-selected {
+                    background-color: transparent;
+                    border: 3px solid #526ed3;
+                }
+            }
+        }
+    }
+}
