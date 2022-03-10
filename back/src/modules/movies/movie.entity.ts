@@ -1,4 +1,5 @@
-import { Column, CreateDateColumn, Entity, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from 'typeorm';
+import { Category } from '../categories/category.entity';
 import { MovieDto } from './movie-dto';
 
 @Entity({ name: 'movies' })
@@ -18,6 +19,13 @@ export class Movie {
     @Column('int', { name: 'note', nullable: true })
     note?: number;
 
+    @Column('varchar', { name: 'categoryId', length: 36 })
+    categoryId: string;
+
+    @ManyToOne(() => Category, category => category.movies)
+    @JoinColumn({ name: 'categoryId' })
+    category?: Category;
+
     public toDto(): MovieDto {
         return {
             id: this.id,
@@ -27,6 +35,8 @@ export class Movie {
             description: this.description,
             releaseDate: this.releaseDate,
             note: this.note,
+            categoryId: this.categoryId,
+            category: this.category ? this.category.toDto() : undefined,
         }
     }
 
@@ -36,6 +46,7 @@ export class Movie {
         this.description = dto.description;
         this.releaseDate = dto.releaseDate;
         this.note = dto.note;
+        this.categoryId = dto.categoryId;
 
         if (!this.id)
             this.id = undefined;

@@ -17,6 +17,8 @@ export class MoviesService extends ApplicationBaseModelService<Movie, MovieDto, 
             getOneResponse: GetMovieResponse,
             getManyResponseField: 'movies',
             getOneResponseField: 'movie',
+            getOneRelations: ['category'],
+            getManyRelations: ['category'],
             repository: this.repository,
             entity: Movie,
         };

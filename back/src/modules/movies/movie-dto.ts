@@ -1,6 +1,7 @@
 import { ApiProperty, ApiPropertyOptional } from '@nestjs/swagger';
 import { GenericResponse } from '../../base/generic-response';
 import { BaseSearchResponse } from '../../base/search-response';
+import { CategoryDto } from '../categories/category-dto';
 
 export class MovieDto {
     @ApiPropertyOptional()
@@ -17,6 +18,11 @@ export class MovieDto {
     releaseDate?: Date;
     @ApiPropertyOptional()
     note?: number;
+
+    @ApiProperty()
+    categoryId?: string;
+    @ApiPropertyOptional({ type: () => CategoryDto })
+    category?: CategoryDto;
 }
 
 export class GetMovieResponse extends GenericResponse {
