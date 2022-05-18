@@ -22,7 +22,7 @@ import { UsersService } from "../modules/users/users.service";
         JwtModule.register({
             secret: JwtSecretKey,
             signOptions: {
-                expiresIn: '3650d',
+                expiresIn: '7d',
             },
         }),
         TypeOrmModule.forFeature([
